@@ -1,23 +1,31 @@
-body {
+@keyframes animatedBackground {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+body, html {
+    height: 100%;
     margin: 0;
     padding: 0;
-    height: 100vh;
+    overflow: hidden;
+}
+
+body {
+    background: linear-gradient(270deg, #ff0000, #ff8000, #ffff00, #80ff00, #00ff00, #00ffff, #0000ff, #ff00ff, #ff0000);
+    background-size: 200% 200%;
+    animation: animatedBackground 10s ease infinite;
     display: flex;
     justify-content: center;
     align-items: center;
-    background: linear-gradient(to right, #ff0000, #ff8000, #ffff00, #00ff00, #0000ff, #8b00ff);
-    animation: shake 0.5s infinite alternate;
-}
-
-@keyframes shake {
-    0% { transform: translateX(0); }
-    100% { transform: translateX(-10px); }
+    flex-direction: column;
 }
 
 .container {
     text-align: center;
-    max-width: 600px;
     padding: 20px;
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.8); /* Menambahkan transparansi agar background gradasi terlihat */
 }
 
 .profile-pic img {
@@ -31,14 +39,10 @@ button {
     margin: 10px;
     padding: 10px 20px;
     background-color: #007bff;
-    color: #fff;
+    color: white;
     border: none;
     border-radius: 5px;
     cursor: pointer;
-}
-
-.social-media {
-    margin-top: 20px;
 }
 
 .social-media a {
@@ -47,4 +51,4 @@ button {
 
 .heart {
     color: #ff4757;
-  }
+}
